@@ -49,6 +49,11 @@ RUN sudo apt-get update && sudo apt-get upgrade -y && rosdep update
 # ROS2 dependencies built from source
 #####################################
 
+RUN git config --global credential.helper store 
+RUN git config --global user.email "admin@docker"
+RUN git config --global user.name "admin"
+
+
 
 RUN mkdir -p /home/$USER/ros_ws/src
 WORKDIR /home/$USER/ros_ws/src
